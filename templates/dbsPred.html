@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBS Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h2>DBS Prediction Result</h2>
+        <p>Exchange rate: {{ exchange_rate }} SGD per USD</p>
+        <p>Predicted DBS price: SGD {{ prediction }}</p>
+        <form action="{{ url_for('dbs') }}" method="get">
+            <input type="submit" value="Try another rate">
+        </form>
+        <form action="{{ url_for('main') }}" method="get">
+            <input type="submit" value="Main">
+        </form>
+    </main>
+</body>
+</html>
